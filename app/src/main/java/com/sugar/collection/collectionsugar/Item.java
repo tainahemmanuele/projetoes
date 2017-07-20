@@ -16,19 +16,47 @@ public class Item extends SugarRecord {
      */
     String name;
 
+    Collection collection;
+
+    String value;
+
+    String created_at;
+
     /**
      * Constructor for Item class.
      */
     public Item() {
     }
 
-    /**
-     * Other constructor for item class.
-     *
-     * @param name A String name of item.
-     */
-    public Item(String name) {
+    public Item(String name, Collection collection, String value, String created_at) {
         this.name = name;
+        this.collection = collection;
+        this.value = value;
+        this.created_at = created_at;
+    }
+
+    public Collection getCollection() {
+        return collection;
+    }
+
+    public void setCollection(Collection collection) {
+        this.collection = collection;
+    }
+
+    public String getValue() {
+        return value;
+    }
+
+    public void setValue(String value) {
+        this.value = value;
+    }
+
+    public String getCreated_at() {
+        return created_at;
+    }
+
+    public void setCreated_at(String created_at) {
+        this.created_at = created_at;
     }
 
     /**
