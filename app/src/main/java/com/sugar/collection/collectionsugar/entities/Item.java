@@ -46,7 +46,7 @@ public class Item extends SugarRecord {
     }
 
     public Collection getCollection() {
-        return collection;
+        return this.collection;
     }
 
     public void setCollection(Collection collection) {
@@ -54,7 +54,7 @@ public class Item extends SugarRecord {
     }
 
     public String getCreated_at() {
-        return created_at;
+        return this.created_at;
     }
 
     public void setCreated_at(String created_at) {
@@ -67,7 +67,7 @@ public class Item extends SugarRecord {
      * @return A String name of item.
      */
     public String getName() {
-        return name;
+        return this.name;
     }
 
     /**

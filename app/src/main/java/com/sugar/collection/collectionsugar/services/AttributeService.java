@@ -1,5 +1,6 @@
 package com.sugar.collection.collectionsugar.services;
 
+import com.orm.SugarRecord;
 import com.sugar.collection.collectionsugar.entities.Attribute;
 import com.sugar.collection.collectionsugar.entities.Item;
 
@@ -12,7 +13,7 @@ import java.util.List;
 public final class AttributeService {
 
     public static Attribute getAttributeById(int id) {
-        Attribute attribute = Attribute.findById(Attribute.class, id);
+        Attribute attribute = SugarRecord.findById(Attribute.class, id);
         return attribute;
     }
 
@@ -22,7 +23,7 @@ public final class AttributeService {
     }
 
     public static long updateAttribute(int id, String name, Item item, String value) {
-        Attribute attribute = Attribute.findById(Attribute.class, id);
+        Attribute attribute = SugarRecord.findById(Attribute.class, id);
         attribute.setName(name);
         attribute.setItem(item);
         attribute.setValue(value);
@@ -30,17 +31,17 @@ public final class AttributeService {
     }
 
     public static boolean deleteAttribute(int id) {
-        Attribute attribute = Attribute.findById(Attribute.class, id);
+        Attribute attribute = SugarRecord.findById(Attribute.class, id);
         return attribute.delete();
     }
 
 
     public static List<Attribute> getAllAttributes() {
-        List<Attribute> attributes = Attribute.listAll(Attribute.class);
+        List<Attribute> attributes = SugarRecord.listAll(Attribute.class);
         return attributes;
     }
 
     public static int deleteAllAttributes() {
-        return Attribute.deleteAll(Attribute.class);
+        return SugarRecord.deleteAll(Attribute.class);
     }
 }

@@ -53,7 +53,7 @@ public class Attribute extends SugarRecord {
      * @return A String name of item.
      */
     public String getName() {
-        return name;
+        return this.name;
     }
 
     /**
@@ -66,7 +66,7 @@ public class Attribute extends SugarRecord {
     }
 
     public Item getItem() {
-        return item;
+        return this.item;
     }
 
     public void setItem(Item item) {
@@ -74,7 +74,7 @@ public class Attribute extends SugarRecord {
     }
 
     public String getValue() {
-        return value;
+        return this.value;
     }
 
     public void setValue(String value) {

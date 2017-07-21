@@ -27,7 +27,7 @@ public class Session extends SugarRecord {
     }
 
     public int getIdUser() {
-        return idUser;
+        return this.idUser;
     }
 
     public void setIdUser(int idUser) {
@@ -35,10 +35,10 @@ public class Session extends SugarRecord {
     }
 
     public boolean isActive() {
-        return isActive;
+        return this.isActive;
     }
 
     public void setActive(boolean active) {
-        isActive = active;
+        this.isActive = active;
     }
 }

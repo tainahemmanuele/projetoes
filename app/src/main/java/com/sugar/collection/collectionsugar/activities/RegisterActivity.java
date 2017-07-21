@@ -42,11 +42,13 @@ public class RegisterActivity extends Activity {
             @Override
             public void onClick(View v) {
                 if (saveUser()) {
-                    Toast toast = Toast.makeText(getApplicationContext(), R.string.create_user_success, Toast.LENGTH_LONG);
+                    Toast toast = Toast.makeText(getApplicationContext(), R.string
+                            .create_user_success, Toast.LENGTH_LONG);
                     toast.show();
                     finish();
                 } else {
-                    Toast toast = Toast.makeText(getApplicationContext(), R.string.create_user_error, Toast.LENGTH_LONG);
+                    Toast toast = Toast.makeText(getApplicationContext(), R.string
+                            .create_user_error, Toast.LENGTH_LONG);
                     toast.show();
                 }
             }

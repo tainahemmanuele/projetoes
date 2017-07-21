@@ -3,18 +3,14 @@ package com.sugar.collection.collectionsugar.activities;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.orm.SugarContext;
-import com.orm.SugarRecord;
 import com.sugar.collection.collectionsugar.R;
 import com.sugar.collection.collectionsugar.Utils;
-import com.sugar.collection.collectionsugar.entities.User;
 import com.sugar.collection.collectionsugar.services.SessionService;
 import com.sugar.collection.collectionsugar.services.SettingsService;
 import com.sugar.collection.collectionsugar.services.UserService;
@@ -61,11 +57,13 @@ public class LoginActivity extends Activity {
             public void onClick(View v) {
                 // Verifica de os dados existem no BD e seta sessao do usuario.
                 if (isUser()) {
-                    Toast toast = Toast.makeText(getApplicationContext(), R.string.login_success, Toast.LENGTH_SHORT);
+                    Toast toast = Toast.makeText(getApplicationContext(), R.string.login_success,
+                            Toast.LENGTH_SHORT);
                     toast.show();
                     goToMainActivity();
                 } else {
-                    Toast toast = Toast.makeText(getApplicationContext(), R.string.login_fail, Toast.LENGTH_SHORT);
+                    Toast toast = Toast.makeText(getApplicationContext(), R.string.login_fail,
+                            Toast.LENGTH_SHORT);
                     toast.show();
                 }
             }
@@ -106,7 +104,8 @@ public class LoginActivity extends Activity {
 
 
     /**
-     * Save the temporary session for the user. If user not exists, SettingsService.USER_TEMPORARY_SESSION
+     * Save the temporary session for the user. If user not exists, SettingsService
+     * .USER_TEMPORARY_SESSION
      * is null.
      *
      * @param username String username inserted in Edit Text.
@@ -116,7 +115,8 @@ public class LoginActivity extends Activity {
     private boolean saveSessionForUser(String username, String password) {
         SettingsService.USER_TEMPORARY_SESSION = UserService.checkUserByLogin(username, password);
         if (SettingsService.USER_TEMPORARY_SESSION != null) {
-            SessionService.saveSession(SettingsService.USER_TEMPORARY_SESSION.getId().intValue(), true);
+            SessionService.saveSession(SettingsService.USER_TEMPORARY_SESSION.getId().intValue(),
+                    true);
             return true;
         } else {
             return false;
@@ -147,12 +147,9 @@ public class LoginActivity extends Activity {
                     .getAllSessions().size() - 1);
             SettingsService.USER_TEMPORARY_SESSION = UserService
                     .getUserById(SettingsService.PREVIOUS_SESSION.getIdUser());
-            if (!SettingsService.PREVIOUS_SESSION.isActive()) {
-                return false;
-            } else {
-                return saveSessionForUser(SettingsService.USER_TEMPORARY_SESSION.getLogin(),
-                        SettingsService.USER_TEMPORARY_SESSION.getPassword());
-            }
+            return SettingsService.PREVIOUS_SESSION.isActive() &&
+                    saveSessionForUser(SettingsService.USER_TEMPORARY_SESSION.getLogin(),
+                            SettingsService.USER_TEMPORARY_SESSION.getPassword());
         }
     }
 

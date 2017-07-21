@@ -47,7 +47,7 @@ public class Collection extends SugarRecord {
      * @return The Category Model.
      */
     public Category getCategory() {
-        return category;
+        return this.category;
     }
 
     /**
@@ -65,7 +65,7 @@ public class Collection extends SugarRecord {
      * @return A User model.
      */
     public User getUser() {
-        return user;
+        return this.user;
     }
 
     /**
@@ -83,7 +83,7 @@ public class Collection extends SugarRecord {
      * @return A String name of item.
      */
     public String getName() {
-        return name;
+        return this.name;
     }
 
     /**

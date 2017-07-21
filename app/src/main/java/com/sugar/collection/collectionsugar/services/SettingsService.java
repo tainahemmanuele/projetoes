@@ -8,6 +8,6 @@ import com.sugar.collection.collectionsugar.entities.User;
  */
 
 public final class SettingsService {
-    public static User USER_TEMPORARY_SESSION = null;
-    public static Session PREVIOUS_SESSION = null;
+    public static User USER_TEMPORARY_SESSION;
+    public static Session PREVIOUS_SESSION;
 }

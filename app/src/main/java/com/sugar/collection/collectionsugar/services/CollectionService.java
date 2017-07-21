@@ -1,5 +1,6 @@
 package com.sugar.collection.collectionsugar.services;
 
+import com.orm.SugarRecord;
 import com.sugar.collection.collectionsugar.entities.Category;
 import com.sugar.collection.collectionsugar.entities.Collection;
 import com.sugar.collection.collectionsugar.entities.User;
@@ -13,7 +14,7 @@ import java.util.List;
 public final class CollectionService {
 
     public static Collection getCollectionById(int id) {
-        Collection collection = Collection.findById(Collection.class, id);
+        Collection collection = SugarRecord.findById(Collection.class, id);
         return collection;
     }
 
@@ -23,7 +24,7 @@ public final class CollectionService {
     }
 
     public static long updateCollection(int id, String name, Category category, User user) {
-        Collection collection = Collection.findById(Collection.class, id);
+        Collection collection = SugarRecord.findById(Collection.class, id);
         collection.setCategory(category);
         collection.setName(name);
         collection.setUser(user);
@@ -31,24 +32,24 @@ public final class CollectionService {
     }
 
     public static boolean deleteCollection(int id) {
-        Collection collection = Collection.findById(Collection.class, id);
+        Collection collection = SugarRecord.findById(Collection.class, id);
         return collection.delete();
     }
 
 
     public static List<Collection> getAllCollections() {
-        List<Collection> collections = Collection.listAll(Collection.class);
+        List<Collection> collections = SugarRecord.listAll(Collection.class);
         return collections;
     }
 
     public static List<Collection> getCollectionsByUser(int idUser) {
-        List<Collection> collections = Collection.find(Collection.class, "user = ?",
-                new String[]{String.valueOf(idUser)});
+        List<Collection> collections = SugarRecord.find(Collection.class, "user = ?",
+                String.valueOf(idUser));
         return collections;
     }
 
 
     public static int deleteAllCollections() {
-        return Collection.deleteAll(Collection.class);
+        return SugarRecord.deleteAll(Collection.class);
     }
 }

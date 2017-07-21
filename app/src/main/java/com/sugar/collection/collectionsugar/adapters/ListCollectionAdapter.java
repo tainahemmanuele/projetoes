@@ -9,6 +9,8 @@ import android.widget.ImageButton;
 import android.widget.TextView;
 
 import com.sugar.collection.collectionsugar.R;
+import com.sugar.collection.collectionsugar.R.id;
+import com.sugar.collection.collectionsugar.R.layout;
 import com.sugar.collection.collectionsugar.entities.Collection;
 
 import java.util.List;
@@ -34,11 +36,11 @@ public class ListCollectionAdapter extends ArrayAdapter<Collection> {
 
         if (v == null) {
             LayoutInflater vi;
-            vi = LayoutInflater.from(getContext());
-            v = vi.inflate(R.layout.item_list_row, null);
+            vi = LayoutInflater.from(this.getContext());
+            v = vi.inflate(layout.item_list_row, null);
         }
 
-        Collection p = getItem(position);
+        Collection p = this.getItem(position);
 
         if (p != null) {
             TextView id = (TextView) v.findViewById(R.id.id);
