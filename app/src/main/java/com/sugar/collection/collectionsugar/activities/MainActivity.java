@@ -1,7 +1,9 @@
-package com.sugar.collection.collectionsugar;
+package com.sugar.collection.collectionsugar.activities;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+
+import com.sugar.collection.collectionsugar.R;
 
 public class MainActivity extends AppCompatActivity {
     @Override
