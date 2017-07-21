@@ -3,7 +3,7 @@
  *
  * @author Caio F M Barbosa.
  */
-package com.sugar.collection.collectionsugar;
+package com.sugar.collection.collectionsugar.entities;
 
 import com.orm.SugarRecord;
 
