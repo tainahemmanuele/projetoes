@@ -16,10 +16,14 @@ public class Item extends SugarRecord {
      */
     String name;
 
+    /**
+     * Collection model for the one-to-many relationship.
+     */
     Collection collection;
 
-    String value;
-
+    /**
+     * Date of birth of Item.
+     */
     String created_at;
 
     /**
@@ -28,31 +32,29 @@ public class Item extends SugarRecord {
     public Item() {
     }
 
-    public Item(String name, Collection collection, String value, String created_at) {
+    /**
+     * This is a complete constructor for Item class.
+     *
+     * @param name       Name of Item.
+     * @param collection A Collection model.
+     * @param created_at A date of birth of Item.
+     */
+    public Item(String name, Collection collection, String created_at) {
         this.name = name;
         this.collection = collection;
-        this.value = value;
         this.created_at = created_at;
     }
 
     public Collection getCollection() {
-        return collection;
+        return this.collection;
     }
 
     public void setCollection(Collection collection) {
         this.collection = collection;
     }
 
-    public String getValue() {
-        return value;
-    }
-
-    public void setValue(String value) {
-        this.value = value;
-    }
-
     public String getCreated_at() {
-        return created_at;
+        return this.created_at;
     }
 
     public void setCreated_at(String created_at) {
@@ -65,7 +67,7 @@ public class Item extends SugarRecord {
      * @return A String name of item.
      */
     public String getName() {
-        return name;
+        return this.name;
     }
 
     /**

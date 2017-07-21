@@ -5,11 +5,11 @@ import android.os.Bundle;
 
 import com.sugar.collection.collectionsugar.R;
 
-public class CollectionActivity extends AppCompatActivity {
+public class ListAttributeActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_collection);
+        setContentView(R.layout.activity_attribute_list);
     }
 }

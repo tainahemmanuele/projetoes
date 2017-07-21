@@ -33,7 +33,7 @@ public class User extends SugarRecord {
     }
 
     public String getName() {
-        return name;
+        return this.name;
     }
 
     public void setName(String name) {
@@ -41,7 +41,7 @@ public class User extends SugarRecord {
     }
 
     public String getLogin() {
-        return login;
+        return this.login;
     }
 
     public void setLogin(String login) {
@@ -49,7 +49,7 @@ public class User extends SugarRecord {
     }
 
     public String getPassword() {
-        return password;
+        return this.password;
     }
 
     public void setPassword(String password) {

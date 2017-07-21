@@ -8,7 +8,7 @@ package com.sugar.collection.collectionsugar.entities;
 import com.orm.SugarRecord;
 
 /**
- * This class represents a Item model.
+ * This class represents a Collection model.
  */
 public class Collection extends SugarRecord {
     /**
@@ -16,34 +16,63 @@ public class Collection extends SugarRecord {
      */
     String name;
 
+    /**
+     * Category of Collection.
+     */
     Category category;
 
+    /**
+     * Collection owner.
+     */
     User user;
 
     /**
-     * Constructor for Item class.
+     * Constructor for Collection class.
      */
     public Collection() {
     }
 
+    /**
+     * Complete Constructor for Collection class.
+     */
     public Collection(String name, Category category, User user) {
         this.name = name;
         this.category = category;
         this.user = user;
     }
 
+    /**
+     * This method get the category.
+     *
+     * @return The Category Model.
+     */
     public Category getCategory() {
-        return category;
+        return this.category;
     }
 
+    /**
+     * This method set the category model of collection.
+     *
+     * @param category A Category Model created by user.
+     */
     public void setCategory(Category category) {
         this.category = category;
     }
 
+    /**
+     * This method get de User.
+     *
+     * @return A User model.
+     */
     public User getUser() {
-        return user;
+        return this.user;
     }
 
+    /**
+     * This method set the user model, owner of collection.
+     *
+     * @param user A User Model.
+     */
     public void setUser(User user) {
         this.user = user;
     }
@@ -54,7 +83,7 @@ public class Collection extends SugarRecord {
      * @return A String name of item.
      */
     public String getName() {
-        return name;
+        return this.name;
     }
 
     /**
