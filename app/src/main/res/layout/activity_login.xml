@@ -43,12 +43,14 @@
             <EditText android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="5dip"
+                android:id="@+id/username"
                 android:layout_marginBottom="20dip"
                 android:singleLine="true"/>
             <!--  Password Label -->
             <TextView android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
                 android:textColor="#372c24"
+                android:id="@+id/password"
                 android:text="Password"/>
             <EditText android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
@@ -67,7 +69,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="40dip"
                 android:layout_marginBottom="40dip"
-                android:text="New to Twitter? Register here"
+                android:text="Novo no app? Registre-se Aqui!"
                 android:gravity="center"
                 android:textSize="20dip"
                 android:textColor="#0b84aa"/>
