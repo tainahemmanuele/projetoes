@@ -3,14 +3,18 @@ package com.sugar.collection.collectionsugar.activities;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.orm.SugarContext;
+import com.orm.SugarRecord;
 import com.sugar.collection.collectionsugar.R;
 import com.sugar.collection.collectionsugar.Utils;
+import com.sugar.collection.collectionsugar.entities.User;
 import com.sugar.collection.collectionsugar.services.SessionService;
 import com.sugar.collection.collectionsugar.services.SettingsService;
 import com.sugar.collection.collectionsugar.services.UserService;
@@ -31,10 +35,11 @@ public class LoginActivity extends Activity {
         super.onCreate(savedInstanceState);
         // Verifica se usuário já fez algum login previamente, e faz alterações necessárias na
         // sessao do usuário.
+        setContentView(R.layout.activity_login);
+
         if (checkPreviousLogin()) {
             goToMainActivity();
         }
-        setContentView(R.layout.activity_login);
 
         this.username = (EditText) findViewById(R.id.username);
         this.password = (EditText) findViewById(R.id.password);
@@ -78,22 +83,25 @@ public class LoginActivity extends Activity {
         if (username.trim().length() == Utils.ZERO) {
             this.username.setError("Nome de usuário não foi inserido");
             this.username.requestFocus();
+            return false;
         }
         if (username.trim().length() < Utils.LOGIN_MIN) {
             this.username.setError("Nome de usuário não pode ter menos de 5 caracteres");
             this.username.requestFocus();
+            return false;
         }
         if (password.trim().length() == Utils.ZERO) {
             this.password.setError("Senha não foi inserida");
             this.password.requestFocus();
+            return false;
         }
         if (password.trim().length() < Utils.PASSWORD_MIN) {
             this.password.setError("Senha não pode ter menos de 5 caracteres");
             this.password.requestFocus();
+            return false;
         } else {
             return saveSessionForUser(username, password);
         }
-        return false;
     }
 
 

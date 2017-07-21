@@ -73,22 +73,25 @@ public class RegisterActivity extends Activity {
         if (username.trim().length() == Utils.ZERO) {
             this.username.setError("Nome de usuário não foi inserido");
             this.username.requestFocus();
+            return false;
         }
         if (username.trim().length() < Utils.LOGIN_MIN) {
             this.username.setError("Nome de usuário não pode ter menos de 5 caracteres");
             this.username.requestFocus();
+            return false;
         }
         if (password.trim().length() == Utils.ZERO) {
             this.password.setError("Senha não foi inserida");
             this.password.requestFocus();
+            return false;
         }
         if (password.trim().length() < Utils.PASSWORD_MIN) {
             this.password.setError("Senha não pode ter menos de 5 caracteres");
             this.password.requestFocus();
+            return false;
         } else {
             return UserService.saveUser(fullname, username, password);
         }
-        return false;
     }
 
 //    public void backToLogin(){

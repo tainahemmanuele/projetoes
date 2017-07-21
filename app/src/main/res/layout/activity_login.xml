@@ -50,11 +50,11 @@
             <TextView android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
                 android:textColor="#372c24"
-                android:id="@+id/password"
                 android:text="Password"/>
             <EditText android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="5dip"
+                android:id="@+id/password"
                 android:singleLine="true"
                 android:password="true"/>
             <!-- Login button -->

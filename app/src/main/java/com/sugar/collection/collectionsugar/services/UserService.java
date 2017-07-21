@@ -1,5 +1,7 @@
 package com.sugar.collection.collectionsugar.services;
 
+import android.util.Log;
+
 import com.sugar.collection.collectionsugar.entities.User;
 
 import java.util.List;
@@ -15,19 +17,20 @@ public final class UserService {
     }
 
     public static List<User> findUsersByName(String name) {
-        List<User> list = User.find(User.class, "name=?", new String[]{String.valueOf(name)}, null, null, null);
-        if (list.isEmpty()) return null;
+        List<User> list = User.find(User.class, "name=?", new String[]{String.valueOf(name)});
+        Log.i("findUsersByName", list.toArray().toString());
         return list;
     }
 
     public static List<User> findUsersByLogin(String login) {
-        List<User> list = User.find(User.class, "login=?", new String[]{String.valueOf(login)}, null, null, null);
-        if (list.isEmpty()) return null;
+        List<User> list = User.find(User.class, "login=?", new String[]{String.valueOf(login)});
+        Log.i("findUsersByLogin", list.toArray().toString());
         return list;
     }
 
     public static User checkUserByLogin(String login, String password) {
-        List<User> list = User.find(User.class, "login=?", new String[]{String.valueOf(login)}, null, null, null);
+        List<User> list = User.find(User.class, "login=?", new String[]{String.valueOf(login)});
+        Log.i("checkUserByLogin", list.toArray().toString());
         if (list.isEmpty()) return null;
         for (int i = 0; i < list.size(); i++) {
             if (list.get(i).getLogin().equals(login) && list.get(i).getPassword().equals(password)) {
@@ -38,7 +41,8 @@ public final class UserService {
     }
 
     public static boolean saveUser(String name, String login, String password) {
-        if (findUsersByLogin(login).isEmpty()) {
+        List<User> list = findUsersByLogin(login);
+        if (list.isEmpty()) {
             User user = new User(name, login, password);
             user.save();
             return true;

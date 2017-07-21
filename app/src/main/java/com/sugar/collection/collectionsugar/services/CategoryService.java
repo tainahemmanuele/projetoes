@@ -1,6 +1,5 @@
 package com.sugar.collection.collectionsugar.services;
 
-import com.sugar.collection.collectionsugar.entities.Collection;
 import com.sugar.collection.collectionsugar.entities.Category;
 
 import java.util.List;
