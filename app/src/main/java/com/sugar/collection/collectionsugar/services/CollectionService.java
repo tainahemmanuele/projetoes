@@ -41,6 +41,13 @@ public final class CollectionService {
         return collections;
     }
 
+    public static List<Collection> getCollectionsByUser(int idUser) {
+        List<Collection> collections = Collection.find(Collection.class, "user = ?",
+                new String[]{String.valueOf(idUser)});
+        return collections;
+    }
+
+
     public static int deleteAllCollections() {
         return Collection.deleteAll(Collection.class);
     }

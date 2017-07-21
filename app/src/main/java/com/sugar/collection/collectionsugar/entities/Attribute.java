@@ -10,7 +10,7 @@ import com.orm.SugarRecord;
 /**
  * This class represents a Category model.
  */
-public class Category extends SugarRecord {
+public class Attribute extends SugarRecord {
     /**
      * This is a name of item.
      * <p>
@@ -19,11 +19,21 @@ public class Category extends SugarRecord {
     String name;
 
     /**
+     * Item model for one-to-many relationship.
+     */
+    Item item;
+
+    /**
+     * A String formated value for the Attribute.
+     */
+    String value;
+
+    /**
      * Constructor for Item class.
      * <p>
      * This is important for Sugar Record Model, by th docs in the blog.
      */
-    public Category() {
+    public Attribute() {
     }
 
     /**
@@ -31,8 +41,10 @@ public class Category extends SugarRecord {
      *
      * @param name A String name of item.
      */
-    public Category(String name) {
+    public Attribute(String name, Item item, String value) {
         this.name = name;
+        this.item = item;
+        this.value = value;
     }
 
     /**
@@ -51,5 +63,21 @@ public class Category extends SugarRecord {
      */
     public void setName(String name) {
         this.name = name;
+    }
+
+    public Item getItem() {
+        return item;
+    }
+
+    public void setItem(Item item) {
+        this.item = item;
+    }
+
+    public String getValue() {
+        return value;
+    }
+
+    public void setValue(String value) {
+        this.value = value;
     }
 }

@@ -7,7 +7,6 @@ import java.util.List;
 /**
  * Created by caiom on 20/07/2017.
  */
-
 public final class UserService {
 
     public static User getUserById(int id) {

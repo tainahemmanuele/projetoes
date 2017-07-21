@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_height="wrap_content" android:orientation="vertical"
+    android:layout_width="fill_parent">
+
+    <TableRow
+        android:id="@+id/row"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/id"
+            android:layout_width="fill_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:height="40sp"
+            android:gravity="center"
+            android:text="id"
+            android:textColor="#000000"
+            android:textStyle="bold"
+            android:typeface="monospace" />
+
+        <TextView
+            android:id="@+id/title_item"
+            android:layout_width="fill_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="4"
+            android:height="40sp"
+            android:gravity="center"
+            android:text="Title"
+            android:textColor="#000000"
+            android:textStyle="bold"
+            android:typeface="monospace" />
+
+        <ImageButton
+            android:src="@android:drawable/ic_menu_delete"
+            android:id="@+id/btn_delete_item"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:focusable="false"
+            android:focusableInTouchMode="false"
+            android:gravity="center" />
+    </TableRow>
+
+    <!--<TableRow android:layout_height="wrap_content"-->
+        <!--android:layout_width="fill_parent">-->
+
+        <!--<TextView android:textColor="#FFFFFF"-->
+            <!--android:id="@+id/categoryId"-->
+            <!--android:layout_width="fill_parent"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:text="categoryId"-->
+            <!--android:layout_weight="1"-->
+            <!--android:height="20sp" />-->
+
+        <!--<TextView android:layout_height="wrap_content"-->
+            <!--android:layout_width="fill_parent"-->
+            <!--android:layout_weight="1"-->
+            <!--android:textColor="#FFFFFF"-->
+            <!--android:gravity="right"-->
+            <!--android:id="@+id/description"-->
+            <!--android:text="description"-->
+            <!--android:height="20sp" />-->
+    <!--</TableRow>-->
+
+</TableLayout>
