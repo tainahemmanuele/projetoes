@@ -1,5 +1,6 @@
 package com.sugar.collection.collectionsugar.activities;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.AppCompatActivity;
@@ -11,6 +12,7 @@ import android.widget.ListView;
 import com.sugar.collection.collectionsugar.R;
 import com.sugar.collection.collectionsugar.R.id;
 import com.sugar.collection.collectionsugar.R.layout;
+import com.sugar.collection.collectionsugar.Utils;
 import com.sugar.collection.collectionsugar.adapters.ListCollectionAdapter;
 import com.sugar.collection.collectionsugar.entities.Collection;
 import com.sugar.collection.collectionsugar.services.CollectionService;
@@ -24,6 +26,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         this.setContentView(layout.activity_main);
+        Utils.generateCategoryDefault();
         List<Collection> listCollectionUser = CollectionService.getCollectionsByUser
                 (SettingsService.USER_TEMPORARY_SESSION.getId().intValue());
         ListView lisViewCollection = (ListView) this.findViewById(id.lv_collection);
@@ -31,21 +34,35 @@ public class MainActivity extends AppCompatActivity {
                 .item_list_row, listCollectionUser);
         lisViewCollection.setAdapter(customAdapter);
 
-        FloatingActionButton btn_logout = (FloatingActionButton) this.findViewById(id.fab);
+        FloatingActionButton btnLogout = (FloatingActionButton) this.findViewById(id.fab_logout);
+        FloatingActionButton btnAddCollection = (FloatingActionButton) this.findViewById(id.fab);
 
         // Faz logout por enquanto.
-        btn_logout.setOnClickListener(new OnClickListener() {
+        btnLogout.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View v) {
                 MainActivity.this.logout();
                 MainActivity.this.finish();
             }
         });
+
+        btnAddCollection.setOnClickListener(new OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                goToAddCollection();
+            }
+        });
+    }
+
+    public void goToAddCollection() {
+        Intent i = new Intent(getApplicationContext(), AddCollectionActivity.class);
+        startActivity(i);
     }
 
     public void logout() {
         SessionService.deleteAllSessions();
         SettingsService.USER_TEMPORARY_SESSION = null;
     }
+
 
 }

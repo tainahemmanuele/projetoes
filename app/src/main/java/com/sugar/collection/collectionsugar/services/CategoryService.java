@@ -16,6 +16,11 @@ public final class CategoryService {
         return category;
     }
 
+    public static Category findCategoryByName(String name) {
+        List<Category> list = SugarRecord.find(Category.class, "name=?", String.valueOf(name));
+        return list.get(0);
+    }
+
     public static long saveCategory(String name) {
         Category category = new Category(name);
         return category.save();
@@ -33,7 +38,7 @@ public final class CategoryService {
     }
 
 
-    public static List<Category> getAllCategorys() {
+    public static List<Category> getAllCategories() {
         List<Category> categories = SugarRecord.listAll(Category.class);
         return categories;
     }
