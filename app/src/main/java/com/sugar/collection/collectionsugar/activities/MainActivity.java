@@ -42,7 +42,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 MainActivity.this.logout();
-                MainActivity.this.finish();
+                goToLogin();
             }
         });
 
@@ -57,6 +57,13 @@ public class MainActivity extends AppCompatActivity {
     public void goToAddCollection() {
         Intent i = new Intent(getApplicationContext(), AddCollectionActivity.class);
         startActivity(i);
+        finish();
+    }
+
+    public void goToLogin() {
+        Intent i = new Intent(getApplicationContext(), LoginActivity.class);
+        startActivity(i);
+        finish();
     }
 
     public void logout() {
