@@ -17,5 +17,7 @@
     <string name="create_user_error">Não foi possível registrar usuário</string>
     <string name="login_fail">Usuário não existe</string>
     <string name="login_success">Logado com sucesso</string>
+    <string name="item_delete_success">Item deletado com sucesso</string>
+    <string name="item_delete_error">Não foi possível deletar este item.</string>
 
 </resources>
