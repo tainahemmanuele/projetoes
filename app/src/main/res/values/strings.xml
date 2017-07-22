@@ -12,6 +12,8 @@
     <string name="error_incorrect_password">Senha incorreta</string>
     <string name="error_field_required">Este campo é obrigatório</string>
     <string name="create_user_success">Usuário criado com Sucesso</string>
+    <string name="create_collection_success">Coleção criada com Sucesso</string>
+    <string name="create_collection_error">Não foi possível criar coleção</string>
     <string name="create_user_error">Não foi possível registrar usuário</string>
     <string name="login_fail">Usuário não existe</string>
     <string name="login_success">Logado com sucesso</string>
