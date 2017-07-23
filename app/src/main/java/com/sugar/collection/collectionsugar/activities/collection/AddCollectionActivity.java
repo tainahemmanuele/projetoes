@@ -1,4 +1,4 @@
-package com.sugar.collection.collectionsugar.activities;
+package com.sugar.collection.collectionsugar.activities.collection;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -13,6 +13,7 @@ import android.widget.Toast;
 
 import com.sugar.collection.collectionsugar.R;
 import com.sugar.collection.collectionsugar.Utils;
+import com.sugar.collection.collectionsugar.activities.MainActivity;
 import com.sugar.collection.collectionsugar.entities.Category;
 import com.sugar.collection.collectionsugar.services.CategoryService;
 import com.sugar.collection.collectionsugar.services.CollectionService;

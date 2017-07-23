@@ -31,6 +31,11 @@ public final class CollectionService {
         return collection.save();
     }
 
+    public static Collection findCollectionByName(String name) {
+        List<Collection> list = SugarRecord.find(Collection.class, "name=?", String.valueOf(name));
+        return list.get(0);
+    }
+
     public static boolean deleteCollection(int id) {
         Collection collection = SugarRecord.findById(Collection.class, id);
         return collection.delete();

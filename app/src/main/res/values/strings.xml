@@ -14,8 +14,12 @@
     <string name="create_user_success">Usuário criado com Sucesso</string>
     <string name="create_collection_success">Coleção criada com Sucesso</string>
     <string name="create_collection_error">Não foi possível criar coleção</string>
+    <string name="update_collection_success">Coleção alterada com Sucesso</string>
+    <string name="update_collection_error">Não foi possível alterar coleção</string>
     <string name="create_user_error">Não foi possível registrar usuário</string>
     <string name="login_fail">Usuário não existe</string>
     <string name="login_success">Logado com sucesso</string>
+    <string name="item_delete_success">Item deletado com sucesso</string>
+    <string name="item_delete_error">Não foi possível deletar este item.</string>
 
 </resources>
