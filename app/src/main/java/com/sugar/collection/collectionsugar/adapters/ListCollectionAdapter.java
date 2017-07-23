@@ -45,7 +45,6 @@ public class ListCollectionAdapter extends ArrayAdapter<Collection> {
         if (p != null) {
             TextView id = (TextView) v.findViewById(R.id.id);
             TextView title = (TextView) v.findViewById(R.id.title_item);
-            ImageButton btn_delete = (ImageButton) v.findViewById(R.id.btn_delete_item);
             id.setText(String.valueOf(p.getId().intValue()));
             title.setText(p.getName());
         }

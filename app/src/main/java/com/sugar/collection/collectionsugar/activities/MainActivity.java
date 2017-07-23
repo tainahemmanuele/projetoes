@@ -9,14 +9,16 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.AdapterView;
-import android.widget.Button;
 import android.widget.ListView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.sugar.collection.collectionsugar.R;
 import com.sugar.collection.collectionsugar.R.id;
 import com.sugar.collection.collectionsugar.R.layout;
 import com.sugar.collection.collectionsugar.Utils;
+import com.sugar.collection.collectionsugar.activities.collection.AddCollectionActivity;
+import com.sugar.collection.collectionsugar.activities.collection.ViewCollectionActivity;
 import com.sugar.collection.collectionsugar.adapters.ListCollectionAdapter;
 import com.sugar.collection.collectionsugar.entities.Collection;
 import com.sugar.collection.collectionsugar.services.CollectionService;
@@ -40,7 +42,8 @@ public class MainActivity extends AppCompatActivity {
 
         listViewCollection.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             public void onItemClick(AdapterView<?> a, View v, int position, long id) {
-               // TODO: Navigate to view Item With delete button.
+                Collection selectedCollection = (Collection) a.getItemAtPosition(position);
+                goToViewItem(selectedCollection.getId().intValue());
             }
         });
 
@@ -64,6 +67,14 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
+
+    public void goToViewItem(int id) {
+        Intent i = new Intent(getApplicationContext(), ViewCollectionActivity.class);
+        i.putExtra("id", String.valueOf(id));
+        startActivity(i);
+    }
+
+
     public void goToAddCollection() {
         Intent i = new Intent(getApplicationContext(), AddCollectionActivity.class);
         startActivity(i);
@@ -82,28 +93,6 @@ public class MainActivity extends AppCompatActivity {
     }
 
     // TODO: Method vai para View Item, pois botao de deletar estará lá.
-    public void showAlertDelete(final int idCollection){
-        AlertDialog.Builder builder = new AlertDialog.Builder(this);
-        builder.setMessage("Deseja realmente deletar este item ?")
-                .setCancelable(false)
-                .setPositiveButton("Sim", new DialogInterface.OnClickListener() {
-                    public void onClick(DialogInterface dialog, int id) {
-                        if(CollectionService.deleteCollection(idCollection)){
-                            Toast toast = Toast.makeText(getApplicationContext(), R.string
-                                            .item_delete_success,
-                                    Toast.LENGTH_SHORT);
-                            toast.show();
-                        }else{
-                            Toast toast = Toast.makeText(getApplicationContext(), R.string
-                                            .item_delete_error,
-                                    Toast.LENGTH_SHORT);
-                            toast.show();
-                        }
-                    }
-                });
-        AlertDialog alert = builder.create();
-        alert.show();
-    }
 
 
 }
