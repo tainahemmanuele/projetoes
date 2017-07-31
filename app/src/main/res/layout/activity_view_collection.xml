@@ -42,7 +42,7 @@
         android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
-        android:id="@+id/name_collection"
+        android:id="@+id/name_item"
         android:layout_below="@+id/textView4"
         android:layout_alignParentEnd="true"/>
 
@@ -52,7 +52,7 @@
         android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
-        android:layout_below="@+id/name_collection"
+        android:layout_below="@+id/name_item"
         android:layout_marginTop="40dp"
         android:text="Categoria:"
         android:textAppearance="?android:attr/textAppearanceMedium" />
@@ -64,17 +64,17 @@
         android:layout_below="@+id/textView5"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
-        android:layout_alignRight="@+id/name_collection"
-        android:layout_alignEnd="@+id/name_collection" />
+        android:layout_alignRight="@+id/name_item"
+        android:layout_alignEnd="@+id/name_item" />
 
     <Button
         android:id="@+id/btnSubmit"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignEnd="@+id/name_collection"
+        android:layout_alignEnd="@+id/name_item"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
-        android:layout_alignRight="@+id/name_collection"
+        android:layout_alignRight="@+id/name_item"
         android:layout_below="@+id/category_collection"
         android:layout_marginTop="51dp"
         android:text="Alterar"/>

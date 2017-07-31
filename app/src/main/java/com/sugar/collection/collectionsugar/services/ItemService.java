@@ -48,6 +48,12 @@ public final class ItemService {
         return attrs;
     }
 
+    public static List<Item> getItensByCollection(int idCollection) {
+        List<Item> items = SugarRecord.find(Item.class, "collection = ?",
+                String.valueOf(idCollection));
+        return items;
+    }
+
     public static int deleteAllItems() {
         return SugarRecord.deleteAll(Item.class);
     }

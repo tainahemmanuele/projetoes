@@ -38,12 +38,12 @@
             android:label="Register New Account"/>
         <activity android:name=".activities.MainActivity"/>
         <activity android:name=".activities.collection.AddCollectionActivity"/>
-        <activity android:name=".activities.AddItemActivity"/>
+        <activity android:name=".activities.item.AddItemActivity"/>
         <activity android:name=".activities.AddCategoryActivity"/>
         <activity android:name=".activities.ListCategoryActivity"/>
         <activity android:name=".activities.ListAttributeActivity"/>
-        <activity android:name=".activities.ListItemActivity"/>
-        <activity android:name=".activities.ViewItemActivity"/>
+        <activity android:name=".activities.item.ListItemActivity"/>
+        <activity android:name=".activities.item.ViewItemActivity"/>
         <activity android:name=".activities.collection.ViewCollectionActivity">
         </activity>
     </application>

@@ -21,5 +21,9 @@
     <string name="login_success">Logado com sucesso</string>
     <string name="item_delete_success">Item deletado com sucesso</string>
     <string name="item_delete_error">Não foi possível deletar este item.</string>
+    <string name="create_item_success">Item criado com Sucesso</string>
+    <string name="create_item_error">Não foi possível criar item</string>
+    <string name="update_item_success">Item alterado com Sucesso</string>
+    <string name="update_item_error">Não foi possível alterar item</string>
 
 </resources>

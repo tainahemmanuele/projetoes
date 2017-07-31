@@ -43,7 +43,7 @@ public class AddCollectionActivity extends AppCompatActivity {
         // get all categories in the app.
         // TODO: filter just categories created by user.
         List<String> categories = getCategoriesByListModel(CategoryService.getAllCategories());
-        nameCollection = (EditText) findViewById(R.id.name_collection);
+        nameCollection = (EditText) findViewById(R.id.name_item);
         categoryCollection = (Spinner) findViewById(R.id.category_collection);
         ArrayAdapter<String> dataAdapter = new ArrayAdapter<String>(this, android.R.layout
                 .simple_spinner_item, categories);

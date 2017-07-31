@@ -67,7 +67,7 @@ public class ViewCollectionActivity extends AppCompatActivity {
         idCollection = (EditText) findViewById(R.id.id_collection);
         idCollection.setText(String.valueOf(collection.getId()));
         idCollection.setEnabled(false);
-        nameCollection = (EditText) findViewById(R.id.name_collection);
+        nameCollection = (EditText) findViewById(R.id.name_item);
         nameCollection.setText(collection.getName());
         categoryCollection = (Spinner) findViewById(R.id.category_collection);
         ArrayAdapter<String> dataAdapter = new ArrayAdapter<String>(this, android.R.layout
@@ -109,7 +109,7 @@ public class ViewCollectionActivity extends AppCompatActivity {
 
     public void showAlertDelete() {
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
-        builder.setMessage("Deseja realmente deletar este item ?")
+        builder.setMessage("Deseja realmente deletar esta coleção ?")
                 .setCancelable(false)
                 .setNegativeButton("Não", new DialogInterface.OnClickListener() {
                     @Override
