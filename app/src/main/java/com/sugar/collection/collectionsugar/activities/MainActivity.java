@@ -1,24 +1,19 @@
 package com.sugar.collection.collectionsugar.activities;
 
-import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
-import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.AdapterView;
 import android.widget.ListView;
-import android.widget.TextView;
-import android.widget.Toast;
 
-import com.sugar.collection.collectionsugar.R;
 import com.sugar.collection.collectionsugar.R.id;
 import com.sugar.collection.collectionsugar.R.layout;
 import com.sugar.collection.collectionsugar.Utils;
 import com.sugar.collection.collectionsugar.activities.collection.AddCollectionActivity;
-import com.sugar.collection.collectionsugar.activities.collection.ViewCollectionActivity;
+import com.sugar.collection.collectionsugar.activities.item.ListItemActivity;
 import com.sugar.collection.collectionsugar.adapters.ListCollectionAdapter;
 import com.sugar.collection.collectionsugar.entities.Collection;
 import com.sugar.collection.collectionsugar.services.CollectionService;
@@ -43,7 +38,7 @@ public class MainActivity extends AppCompatActivity {
         listViewCollection.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             public void onItemClick(AdapterView<?> a, View v, int position, long id) {
                 Collection selectedCollection = (Collection) a.getItemAtPosition(position);
-                goToViewItem(selectedCollection.getId().intValue());
+                goToViewCollectionList(selectedCollection.getId().intValue());
             }
         });
 
@@ -68,17 +63,17 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
-    public void goToViewItem(int id) {
-        Intent i = new Intent(getApplicationContext(), ViewCollectionActivity.class);
+    public void goToViewCollectionList(int id) {
+        Intent i = new Intent(getApplicationContext(), ListItemActivity.class);
         i.putExtra("id", String.valueOf(id));
         startActivity(i);
+        finish();
     }
 
 
     public void goToAddCollection() {
         Intent i = new Intent(getApplicationContext(), AddCollectionActivity.class);
         startActivity(i);
-        finish();
     }
 
     public void goToLogin() {
@@ -91,8 +86,5 @@ public class MainActivity extends AppCompatActivity {
         SessionService.deleteAllSessions();
         SettingsService.USER_TEMPORARY_SESSION = null;
     }
-
-    // TODO: Method vai para View Item, pois botao de deletar estará lá.
-
 
 }
