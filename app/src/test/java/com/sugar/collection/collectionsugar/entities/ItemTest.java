@@ -10,6 +10,8 @@ import static org.junit.Assert.*;
  * Created by Tainah on 05/08/2017.
  */
 public class ItemTest {
+
+
     public static Category category = new Category("CD");
     public static Category category2 = new Category("VINIL");
     public static User user = new User("Tainah", "tainah", "123");
@@ -40,6 +42,13 @@ public class ItemTest {
         item.setName("Tropicalia ou Panis et Circencis");
         Assert.assertEquals(item.getName(), "Tropicalia ou Panis et Circencis");
 
+
+    }
+
+    @Test
+    public void getName() throws Exception {
+        Assert.assertEquals(item.getName(),"tropicalia ou panis et circencis");
+        Assert.assertNotSame(item.getName(),"Tropicalia ou Panis et Circencis");
 
     }
 
