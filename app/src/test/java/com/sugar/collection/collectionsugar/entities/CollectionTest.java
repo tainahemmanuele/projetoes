@@ -1,5 +1,7 @@
 package com.sugar.collection.collectionsugar.entities;
 
+import com.orm.SugarRecord;
+
 import junit.framework.Assert;
 
 import org.junit.Test;
@@ -49,11 +51,17 @@ public class CollectionTest {
 
     @Test
     public void getName() throws Exception {
+        Assert.assertEquals(collection.getName(), "CD");
+        Assert.assertNotSame(collection2.getName(),"CD");
+
 
     }
 
     @Test
     public void setName() throws Exception {
+        collection.setName("VINIL");
+        Assert.assertEquals(collection.getName(), "VINIL");
+        Assert.assertNotSame(collection.getName(),"CD");
 
     }
 
