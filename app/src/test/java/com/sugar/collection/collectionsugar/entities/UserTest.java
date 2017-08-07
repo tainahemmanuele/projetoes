@@ -15,51 +15,51 @@ public class UserTest {
 
     @Test
     public void getName() throws Exception {
-        Assert.assertEquals(user1.getName(),"Tainah");
-        Assert.assertEquals(user2.getName(), "Saulo");
-        Assert.assertNotSame(user1.getName(), "tainah");
+        Assert.assertEquals("Tainah", user1.getName());
+        Assert.assertEquals("Saulo", user2.getName());
+        Assert.assertNotSame("tainah", user1.getName());
 
     }
 
     @Test
     public void setName() throws Exception {
         user1.setName("Tainah Emmanuele");
-        Assert.assertEquals(user1.getName(),"Tainah Emmanuele");
-        Assert.assertNotSame(user1.getName(),"Tainah");
+        Assert.assertEquals("Tainah Emmanuele", user1.getName());
+        Assert.assertNotSame("Tainah", user1.getName());
 
     }
 
     @Test
     public void getLogin() throws Exception {
-        Assert.assertEquals(user1.getLogin(),"tainah");
-        Assert.assertEquals(user2.getLogin(),"saulo");
-        Assert.assertNotSame(user2.getLogin(),"Saulo");
+        Assert.assertEquals("tainah", user1.getLogin());
+        Assert.assertEquals("saulo", user2.getLogin());
+        Assert.assertNotSame("Saulo", user2.getLogin());
 
     }
 
     @Test
     public void setLogin() throws Exception {
         user1.setLogin("tainahemmanuele");
-        Assert.assertEquals(user1.getLogin(), "tainahemmanuele");
-        Assert.assertNotSame(user1.getLogin(), "TainahEmmanuele");
+        Assert.assertEquals("tainahemmanuele", user1.getLogin());
+        Assert.assertNotSame("TainahEmmanuele", user1.getLogin());
 
     }
 
     @Test
     public void getPassword() throws Exception {
-        Assert.assertEquals(user1.getPassword(), "123");
-        Assert.assertEquals(user2.getPassword(),"abc");
-        Assert.assertNotSame(user2.getPassword(),"ABC");
+        Assert.assertEquals("123", user1.getPassword());
+        Assert.assertEquals("abc", user2.getPassword());
+        Assert.assertNotSame("ABC", user2.getPassword());
 
     }
 
     @Test
     public void setPassword() throws Exception {
         user1.setPassword("567");
-        Assert.assertEquals(user1.getPassword(), "567");
+        Assert.assertEquals("567", user1.getPassword());
         user2.setPassword("Abc");
-        Assert.assertEquals(user2.getPassword(),"Abc");
-        Assert.assertNotSame(user2.getPassword(),"ABC");
+        Assert.assertEquals("Abc", user2.getPassword());
+        Assert.assertNotSame("ABC", user2.getPassword());
 
     }
 

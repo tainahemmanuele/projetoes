@@ -15,31 +15,31 @@ public class SessionTest {
 
     @Test
     public void getIdUser() throws Exception {
-        Assert.assertEquals(session.getIdUser(),1234);
-        Assert.assertNotSame(session2.getIdUser(),"1235");
+        Assert.assertEquals(1234,session.getIdUser());
+        Assert.assertNotSame("1235",session2.getIdUser());
 
     }
 
     @Test
     public void setIdUser() throws Exception {
         session.setIdUser(1212);
-        Assert.assertEquals(session.getIdUser(),1212);
+        Assert.assertEquals(1212,session.getIdUser());
 
     }
 
     @Test
     public void isActive() throws Exception {
-        Assert.assertEquals(session.isActive, true);
-        Assert.assertEquals(session2.isActive,true);
-        Assert.assertNotSame(session.isActive,false);
+        Assert.assertEquals(true, session.isActive);
+        Assert.assertEquals(true,session2.isActive);
+        Assert.assertNotSame(false,session.isActive);
 
     }
 
     @Test
     public void setActive() throws Exception {
         session.setActive(false);
-        Assert.assertEquals(session.isActive,false);
-        Assert.assertNotSame(session.isActive,"false");
+        Assert.assertEquals(false,session.isActive);
+        Assert.assertNotSame("false",session.isActive);
 
     }
 

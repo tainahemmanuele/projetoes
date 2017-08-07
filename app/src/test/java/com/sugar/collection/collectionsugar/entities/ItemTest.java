@@ -30,7 +30,7 @@ public class ItemTest {
     @Test
     public void setCollection() throws Exception {
         item2.setCollection(collection);
-        Assert.assertEquals(item.getCollection(), collection);
+        Assert.assertEquals(collection, item.getCollection());
         item.setCollection(collection2);
         Assert.assertNotSame(collection, item.getCollection());
 
@@ -40,15 +40,15 @@ public class ItemTest {
     @Test
     public void setName() throws Exception {
         item.setName("Tropicalia ou Panis et Circencis");
-        Assert.assertEquals(item.getName(), "Tropicalia ou Panis et Circencis");
+        Assert.assertEquals("Tropicalia ou Panis et Circencis", item.getName());
 
 
     }
 
     @Test
     public void getName() throws Exception {
-        Assert.assertEquals(item.getName(),"tropicalia ou panis et circencis");
-        Assert.assertNotSame(item.getName(),"Tropicalia ou Panis et Circencis");
+        Assert.assertEquals("tropicalia ou panis et circencis",item.getName());
+        Assert.assertNotSame("Tropicalia ou Panis et Circencis",item.getName());
 
     }
 

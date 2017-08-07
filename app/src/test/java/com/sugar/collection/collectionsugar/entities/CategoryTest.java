@@ -16,15 +16,15 @@ public class CategoryTest {
 
     @Test
     public void getName() throws Exception {
-        Assert.assertEquals(category.getName(), "CD");
-        Assert.assertNotSame(category.getName(), "cd");
+        Assert.assertEquals("CD", category.getName());
+        Assert.assertNotSame("cd", category.getName());
 
     }
 
     @Test
     public void setName() throws Exception {
         category2.setName("vinil");
-        Assert.assertEquals(category2.getName(), "vinil");
+        Assert.assertEquals("vinil", category2.getName());
         category3.setName("book");
         Assert.assertNotSame("livro", category3.getName());
 

@@ -21,38 +21,38 @@ public class CollectionTest {
 
     @Test
     public void getCategory() throws Exception {
-        Assert.assertEquals(collection.getCategory().getName(), "CD");
-        Assert.assertEquals(collection.getCategory(), category);
+        Assert.assertEquals("CD", collection.getCategory().getName());
+        Assert.assertEquals(category, collection.getCategory());
 
     }
 
     @Test
     public void setCategory() throws Exception {
         collection.setCategory(category2);
-        Assert.assertEquals(collection.getCategory(),category2);
-        Assert.assertNotSame(collection.getCategory(),category);
+        Assert.assertEquals(category2,collection.getCategory());
+        Assert.assertNotSame(category,collection.getCategory());
         collection.setCategory(category);
 
     }
 
     @Test
     public void getUser() throws Exception {
-        Assert.assertEquals(collection.getUser(),user);
+        Assert.assertEquals(user,collection.getUser());
 
     }
 
     @Test
     public void setUser() throws Exception {
         collection2.setUser(user2);
-        Assert.assertEquals(collection2.getUser(), user2);
-        Assert.assertNotSame(collection2.getUser(), user);
+        Assert.assertEquals(user2, collection2.getUser());
+        Assert.assertNotSame( user,collection2.getUser());
 
     }
 
     @Test
     public void getName() throws Exception {
-        Assert.assertEquals(collection.getName(), "CD");
-        Assert.assertNotSame(collection2.getName(),"CD");
+        Assert.assertEquals("CD", collection.getName());
+        Assert.assertNotSame("CD",collection2.getName());
 
 
     }
@@ -60,8 +60,8 @@ public class CollectionTest {
     @Test
     public void setName() throws Exception {
         collection.setName("VINIL");
-        Assert.assertEquals(collection.getName(), "VINIL");
-        Assert.assertNotSame(collection.getName(),"CD");
+        Assert.assertEquals("VINIL", collection.getName());
+        Assert.assertNotSame("CD",collection.getName());
 
     }
 
