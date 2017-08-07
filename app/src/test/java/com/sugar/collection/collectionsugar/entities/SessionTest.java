@@ -13,6 +13,8 @@ public class SessionTest {
     Session session = new Session(1234, true);
     Session session2 = new Session(1235, true);
 
+    /*      Testes de Unidade        */
+
     @Test
     public void getIdUser() throws Exception {
         Assert.assertEquals(1234,session.getIdUser());
@@ -29,8 +31,8 @@ public class SessionTest {
 
     @Test
     public void isActive() throws Exception {
-        Assert.assertEquals(true, session.isActive);
-        Assert.assertEquals(true,session2.isActive);
+        Assert.assertTrue(session.isActive);
+        Assert.assertTrue(session2.isActive);
         Assert.assertNotSame(false,session.isActive);
 
     }
@@ -38,7 +40,7 @@ public class SessionTest {
     @Test
     public void setActive() throws Exception {
         session.setActive(false);
-        Assert.assertEquals(false,session.isActive);
+        Assert.assertFalse(session.isActive);
         Assert.assertNotSame("false",session.isActive);
 
     }

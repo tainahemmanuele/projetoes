@@ -19,6 +19,26 @@ public class CollectionTest {
     public static Collection collection2 = new Collection("VINIL", category, user);
     public static User user2 = new User("Saulo","saulo", "567");
 
+    /*      Testes de Unidade        */
+
+    @Test
+    public void getName() throws Exception {
+        Assert.assertEquals("CD", collection.getName());
+        Assert.assertNotSame("CD",collection2.getName());
+
+
+    }
+
+    @Test
+    public void setName() throws Exception {
+        collection.setName("VINIL");
+        Assert.assertEquals("VINIL", collection.getName());
+        Assert.assertNotSame("CD",collection.getName());
+
+    }
+
+    /*      Testes de Integração        */
+
     @Test
     public void getCategory() throws Exception {
         Assert.assertEquals("CD", collection.getCategory().getName());
@@ -46,22 +66,6 @@ public class CollectionTest {
         collection2.setUser(user2);
         Assert.assertEquals(user2, collection2.getUser());
         Assert.assertNotSame( user,collection2.getUser());
-
-    }
-
-    @Test
-    public void getName() throws Exception {
-        Assert.assertEquals("CD", collection.getName());
-        Assert.assertNotSame("CD",collection2.getName());
-
-
-    }
-
-    @Test
-    public void setName() throws Exception {
-        collection.setName("VINIL");
-        Assert.assertEquals("VINIL", collection.getName());
-        Assert.assertNotSame("CD",collection.getName());
 
     }
 

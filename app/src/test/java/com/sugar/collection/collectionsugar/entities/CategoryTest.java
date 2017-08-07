@@ -14,6 +14,8 @@ public class CategoryTest {
     public static Category category2 = new Category("VINIL");
     public static Category category3 = new Category("LIVRO");
 
+    /*      Testes de Unidade        */
+
     @Test
     public void getName() throws Exception {
         Assert.assertEquals("CD", category.getName());

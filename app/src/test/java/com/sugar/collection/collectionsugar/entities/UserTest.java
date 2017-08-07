@@ -13,6 +13,8 @@ public class UserTest {
     User user1 = new User("Tainah", "tainah", "123");
     User user2 = new User("Saulo", "saulo", "abc");
 
+    /*      Testes de Unidade        */
+
     @Test
     public void getName() throws Exception {
         Assert.assertEquals("Tainah", user1.getName());
